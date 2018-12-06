@@ -1,0 +1,32 @@
+name: account_fx_issue_create
+
+authors:
+  - Intesar Shannan Mohammed
+  - Humera Sultana
+
+type: ABSTRACT
+
+endpoint: /accounts
+
+method: POST
+
+testCases:
+  - id: 1
+    body:
+      '{
+        "name": "JSAH",
+        "accountType": "FX_Issue",
+      }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.accountType == @Request.accountType"
+
+severity: Major
+
+category: Functional
+
+tags:
+   - V2

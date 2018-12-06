@@ -1,0 +1,32 @@
+name: account_self-hosted_create
+
+authors:
+  - Intesar Shannan Mohammed
+  - Humera Sultana
+
+type: SUITE
+
+endpoint: /accounts
+
+method: POST
+
+testCases:
+  - id: 1
+    body:
+      '{
+        "name": "{{JSAH}} 09",
+        "accountType": "Self_Hosted",
+      }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.accountType == @Request.accountType"
+
+severity: Major
+
+category: Functional
+
+tags:
+   - V2

@@ -1,0 +1,34 @@
+name: account_keyvalue_create
+
+authors:
+  - Intesar Shannan Mohammed
+  - Humera Sultana
+
+type: ABSTRACT
+
+endpoint: /accounts
+
+method: POST
+
+testCases:
+  - id: 1
+    body:
+      '{
+        "name": "JSAH",
+        "accountType": "Key Value",
+        "value": "keyvalue1234"
+      }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.accountType == @Request.accountType"
+  - "@Response.data.value== EMPTY"
+
+severity: Major
+
+category: Functional
+
+tags:
+   - V2
