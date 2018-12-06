@@ -1,4 +1,4 @@
-name: delete_Self-Hostedacc
+name: delete_KeyValueacc
 
 authors:
   - Intesar Shannan Mohammed
@@ -6,7 +6,7 @@ authors:
 
 type: SUITE
 
-endpoint: /accounts/{{@create_Self-Hostedacc_abstract_Response.data.id}}
+endpoint: /accounts/{{@create_KeyValueacc_abstract_Response.data.id}}
 
 method: DELETE
 

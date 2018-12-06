@@ -1,10 +1,10 @@
-name: create_gcpacc
+name: create_AZUREacc
 
 authors:
   - Intesar Shannan Mohammed
   - Humera Sultana
 
-type: ABSTRACT
+type: SUITE
 
 endpoint: /accounts
 
@@ -16,23 +16,26 @@ testCases:
   - id: 1
     body:
       '{
-        "name": "JSAH",
-        "accountType": "GCP",
+        "name": "syeds",
+        "accountType": "AZURE",
         "accessKey": "humera987",
         "secretKey": "humera1234",
-        "prop3": "projectid",
-        "allowedRegions": ["asia-east1-a","asia-east1-b","asia-east1-c","us-west1-a",
-        "us-west1-b","us-west1-c","us-west2-a","us-west2-b","us-west2-c"]
+        "prop1": "subscriptionId",
+        "prop2": "TenantId",
+        "allowedRegions": ["East US","East US 2","West US","West US 2",
+        "Central US","North Central US","South Central US","West Central US"]
       }'
 
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
+  - "@Response.data.accountType == @Request.accountType"
   - "@Response.data.accessKey == @Request.accessKey"
   - "@Response.data.secretKey != @Request.secretKey"
   - "@Response.data.allowedRegions != NULL"
-  - "@Response.data.prop3 == @Request.prop3"
+  - "@Response.data.prop1 == @Request.prop1"
+  - "@Response.data.prop2 == @Request.prop2"
 
 severity: Major
 

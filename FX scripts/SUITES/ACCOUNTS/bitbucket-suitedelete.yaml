@@ -1,4 +1,4 @@
-name: delete_Self-Hostedacc
+name: delete_BitBucketacc
 
 authors:
   - Intesar Shannan Mohammed
@@ -6,7 +6,7 @@ authors:
 
 type: SUITE
 
-endpoint: /accounts/{{@create_Self-Hostedacc_abstract_Response.data.id}}
+endpoint: /accounts/{{@create_BitBucketacc_abstract_Response.data.id}}
 
 method: DELETE
 
