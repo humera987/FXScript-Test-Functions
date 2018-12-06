@@ -1,23 +1,23 @@
-name: account_jira_create
+name: create_self-hostedacc
 
 authors:
   - Intesar Shannan Mohammed
   - Humera Sultana
 
-type: ABSTRACT
+type: SUITE
 
 endpoint: /accounts
 
 method: POST
 
+auth: Default
+
 testCases:
   - id: 1
     body:
       '{
-        "name": "JSAH",
-        "accountType": "Jira",
-        "accessKey": "humera987",
-        "secretKey": "humera1234"
+        "name": "syeds",
+        "accountType": "Self_Hosted"
       }'
 
 assertions:
@@ -25,8 +25,6 @@ assertions:
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
   - "@Response.data.accountType == @Request.accountType"
-  - "@Response.data.accessKey == @Request.accessKey"
-  - "@Response.data.secretKey == EMPTY"
 
 severity: Major
 
@@ -34,3 +32,6 @@ category: Functional
 
 tags:
    - V2
+
+policies:
+  logger: DEBUG

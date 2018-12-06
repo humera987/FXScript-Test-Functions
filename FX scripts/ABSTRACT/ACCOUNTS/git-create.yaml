@@ -1,4 +1,4 @@
-name: account_git_create
+name: create_gitacc
 
 authors:
   - Intesar Shannan Mohammed
@@ -9,6 +9,8 @@ type: ABSTRACT
 endpoint: /accounts
 
 method: POST
+
+auth: Default
 
 testCases:
   - id: 1
@@ -34,3 +36,6 @@ category: Functional
 
 tags:
    - V2
+
+policies:
+  logger: DEBUG

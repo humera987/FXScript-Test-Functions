@@ -1,4 +1,4 @@
-name: account_bitbucket_create
+name: create_microsoft_vsts_gitacc
 
 authors:
   - Intesar Shannan Mohammed
@@ -10,12 +10,14 @@ endpoint: /accounts
 
 method: POST
 
+auth: Default
+
 testCases:
   - id: 1
     body:
       '{
         "name": "JSAH",
-        "accountType": "BitBucket",
+        "accountType": "Microsoft_VSTS_Git",
         "accessKey": "humera987",
         "secretKey": "humera1234"
       }'
@@ -34,3 +36,6 @@ category: Functional
 
 tags:
    - V2
+
+policies:
+  logger: DEBUG
