@@ -15,7 +15,7 @@ testCases:
     body:
       '{
         "name": "JSAH",
-        "accountType": "Self_Hosted",
+        "accountType": "Self_Hosted"
       }'
 
 assertions:
