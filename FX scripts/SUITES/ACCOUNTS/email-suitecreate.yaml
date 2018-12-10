@@ -17,9 +17,7 @@ testCases:
     body:
       '{
         "name": "syeds",
-        "accountType": "Email",
-        "accessKey": "humera987",
-        "secretKey": "humera1234"
+        "accountType": "Email"
       }'
 
 assertions:
