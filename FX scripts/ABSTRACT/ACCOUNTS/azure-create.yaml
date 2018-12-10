@@ -1,7 +1,7 @@
 name: create_azureacc
 
 authors:
-  - Intesar Shannan Mohammed
+  - Asiya shaji
   - Humera Sultana
 
 type: ABSTRACT
@@ -12,11 +12,14 @@ method: POST
 
 auth: Default
 
+headers:
+  - 'Content-Type: application/json'
+
 testCases:
   - id: 1
     body:
       '{
-        "name": "JSAH",
+        "name": "{{@Random | b}}",
         "accountType": "AZURE",
         "accessKey": "humera987",
         "secretKey": "humera1234",

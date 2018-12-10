@@ -12,11 +12,14 @@ method: POST
 
 auth: Default
 
+headers:
+  - 'Content-Type: application/json'
+
 testCases:
   - id: 1
     body:
       '{
-        "name": "JSAH",
+        "name": "{{@Random | j}}",
         "accountType": "Jira",
         "accessKey": "humera987",
         "secretKey": "humera1234"

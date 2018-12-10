@@ -1,7 +1,6 @@
 name: delete_keyvalueacc
 
 authors:
-  - Intesar Shannan Mohammed
   - Humera Sultana
 
 type: ABSTRACT
@@ -13,7 +12,7 @@ method: DELETE
 auth: Default
 
 headers:
-- 'Content-Type: application/json'
+  - 'Content-Type: application/json'
 
 assertions:
     - "@StatusCode == 200"
