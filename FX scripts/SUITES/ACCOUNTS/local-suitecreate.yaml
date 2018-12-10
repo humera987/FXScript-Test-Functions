@@ -19,7 +19,7 @@ testCases:
   - id: 1
     body:
       '{
-        "name": {{@Random | 12}}",
+        "name": "{{@Random | 12}}",
         "accountType": "Local"
       }'
 
