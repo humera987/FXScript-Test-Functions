@@ -16,7 +16,7 @@ testCases:
   - id: 1
     body:
       '{
-        "name": {{@Random | 7}}",
+        "name": {{@Random | 15}}",
         "accountType": "Self_Hosted"
       }'
 

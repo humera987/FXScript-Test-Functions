@@ -16,7 +16,7 @@ testCases:
   - id: 1
     body:
       '{
-        "name": {{@Random | 7}}",
+        "name": {{@Random | 4}}",
         "accountType": "Email",
         "accessKey": "humera987"
       }'
@@ -27,7 +27,6 @@ assertions:
   - "@Response.data.name == @Request.name"
   - "@Response.data.accountType == @Request.accountType"
   - "@Response.data.accessKey == @Request.accessKey"
-  - "@Response.data.secretKey == EMPTY"
 
 severity: Major
 
