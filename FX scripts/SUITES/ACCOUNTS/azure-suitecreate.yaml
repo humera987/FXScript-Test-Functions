@@ -40,6 +40,9 @@ assertions:
   - "@Response.data.prop1 == @Request.prop1"
   - "@Response.data.prop2 == @Request.prop2"
 
+cleanup:
+  - delete_account
+
 severity: Major
 
 category: Functional

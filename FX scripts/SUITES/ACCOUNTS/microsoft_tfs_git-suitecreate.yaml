@@ -33,6 +33,9 @@ assertions:
   - "@Response.data.accessKey == @Request.accessKey"
   - "@Response.data.secretKey == EMPTY"
 
+cleanup:
+  - delete_account
+
 severity: Major
 
 category: Functional

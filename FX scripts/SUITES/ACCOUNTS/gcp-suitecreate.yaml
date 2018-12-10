@@ -38,6 +38,9 @@ assertions:
   - "@Response.data.allowedRegions != NULL"
   - "@Response.data.prop3 == @Request.prop3"
 
+cleanup:
+  - delete_account
+
 severity: Major
 
 category: Functional
