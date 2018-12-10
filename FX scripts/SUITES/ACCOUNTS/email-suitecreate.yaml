@@ -16,7 +16,7 @@ testCases:
   - id: 1
     body:
       '{
-        "name": "syeds",
+        "name": {{@Random | 7}}",
         "accountType": "Email",
         "accessKey": "humera987"
       }'
