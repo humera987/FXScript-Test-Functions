@@ -1,7 +1,6 @@
 name: create_KeyValueacc
 
 authors:
-  - Intesar Shannan Mohammed
   - Humera Sultana
 
 type: SUITE
@@ -11,6 +10,9 @@ endpoint: /accounts
 method: POST
 
 auth: Default
+
+headers:
+- 'Content-Type: application/json'
 
 testCases:
   - id: 1

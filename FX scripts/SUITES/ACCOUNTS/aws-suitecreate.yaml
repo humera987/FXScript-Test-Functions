@@ -1,7 +1,7 @@
 name: create_AWSacc
 
 authors:
-  - Intesar Shannan Mohammed
+  - Asiya shaji
   - Humera Sultana
 
 type: SUITE
@@ -11,6 +11,9 @@ endpoint: /accounts
 method: POST
 
 auth: Default
+
+headers:
+- 'Content-Type: application/json'
 
 testCases:
   - id: 1
