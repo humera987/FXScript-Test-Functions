@@ -11,6 +11,7 @@ generators:
   inactive: true
   matches: null
   authors: ""
+  abacResources: null
 - type: "sla"
   assertions:
   - "@StatusCode == 200 AND @ResponseTime < 500"
@@ -29,6 +30,7 @@ generators:
     queryParams: null
     bodyProperties: null
   authors: ""
+  abacResources: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode == 401 OR @StatusCode == 403"
@@ -47,6 +49,7 @@ generators:
     queryParams: null
     bodyProperties: null
   authors: ""
+  abacResources: null
 - type: "auth_invalid"
   assertions:
   - "@StatusCode == 401 OR @StatusCode == 403"
@@ -65,6 +68,7 @@ generators:
     queryParams: null
     bodyProperties: null
   authors: ""
+  abacResources: null
 - type: "auth_invalid_empty"
   assertions:
   - "@StatusCode == 401 OR @StatusCode == 403"
@@ -83,6 +87,7 @@ generators:
     queryParams: null
     bodyProperties: null
   authors: ""
+  abacResources: null
 - type: "auth_invalid_sql"
   assertions:
   - "@StatusCode == 401 OR @StatusCode == 403"
@@ -101,6 +106,7 @@ generators:
     queryParams: null
     bodyProperties: null
   authors: ""
+  abacResources: null
 - type: "rbac"
   assertions:
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
@@ -111,7 +117,7 @@ generators:
   inactive: true
   matches:
   - name: "ROLE_ADMIN,ROLE_PM,ROLE_USER"
-    value: null
+    value: "AutoMap"
     methods: null
     denyRoles: null
     allowRoles: null
@@ -120,6 +126,7 @@ generators:
     queryParams: null
     bodyProperties: null
   authors: ""
+  abacResources: null
 - type: "abac"
   assertions:
   - "Create:@StatusCode == 200 OR @StatusCode == 201"
@@ -130,6 +137,7 @@ generators:
   inactive: true
   matches: null
   authors: ""
+  abacResources: null
 - type: "DDOS"
   assertions:
   - "@StatusCode != 401"
@@ -149,6 +157,7 @@ generators:
     queryParams: null
     bodyProperties: null
   authors: ""
+  abacResources: null
 - type: "XSS_Injection"
   assertions:
   - "@StatusCode != 200"
@@ -161,6 +170,7 @@ generators:
   inactive: true
   matches: null
   authors: ""
+  abacResources: null
 - type: "sql_injection_timebound"
   assertions:
   - "@ResponseTime < 7000 OR @ResponseTime > 10000"
@@ -173,6 +183,7 @@ generators:
   inactive: true
   matches: []
   authors: ""
+  abacResources: null
 - type: "log_Forging"
   assertions:
   - "@StatusCode != 200"
@@ -185,6 +196,7 @@ generators:
   inactive: true
   matches: null
   authors: ""
+  abacResources: null
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 401"
@@ -195,6 +207,7 @@ generators:
   inactive: true
   matches: null
   authors: ""
+  abacResources: null
 - type: "special_chars "
   assertions:
   - "@StatusCode != 200"
@@ -207,6 +220,7 @@ generators:
   inactive: true
   matches: null
   authors: ""
+  abacResources: null
 - type: "null_value"
   assertions:
   - "@StatusCode != 200"
@@ -219,6 +233,7 @@ generators:
   inactive: true
   matches: null
   authors: ""
+  abacResources: null
 - type: "empty_value"
   assertions:
   - "@StatusCode != 200"
@@ -231,6 +246,7 @@ generators:
   inactive: true
   matches: null
   authors: ""
+  abacResources: null
 - type: "negative_number"
   assertions:
   - "@StatusCode != 401"
@@ -241,6 +257,7 @@ generators:
   inactive: true
   matches: null
   authors: ""
+  abacResources: null
 - type: "customize"
   assertions: []
   tags: null
@@ -259,3 +276,4 @@ generators:
     queryParams: null
     bodyProperties: null
   authors: ""
+  abacResources: null
