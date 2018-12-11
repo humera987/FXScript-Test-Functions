@@ -45,4 +45,4 @@ tags:
    - V2
 
 policies:
-  logger: DEBUG
+   logger: DEBUG
