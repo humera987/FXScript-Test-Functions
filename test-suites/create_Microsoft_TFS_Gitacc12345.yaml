@@ -23,7 +23,7 @@ testCases:
         "accountType": "Micresoft_TFS_Git",
         "accessKey": "humera987",
         "secretKey": "humera1234"
-      }'
+       }'
 
 
 assertions:
