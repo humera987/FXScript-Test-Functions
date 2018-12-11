@@ -13,7 +13,7 @@ method: POST
 auth: Default
 
 headers:
-  - 'Content-Type: application/json'
+ - 'Content-Type: application/json'
 
 testCases:
   - id: 1
@@ -31,7 +31,7 @@ assertions:
   - "@Response.data.name == @Request.name"
   - "@Response.data.accountType == @Request.accountType"
   - "@Response.data.accessKey == @Request.accessKey"
-  - "@Response.data.secretKey == EMPTY"
+  - "@Response.data.secretKey != @Request.secretKey"
 
 cleanup:
   - delete_account
