@@ -22,9 +22,9 @@ testCases:
   - id: 1
     body: 
       '{
-        "name": "{{@Random | 3}}",
-        "url": "https://github.com/humera987/FXScript-Test-Functions",
-        "account": "{{@create_gitacc_abstract_Response.data.id}}"
+         "name": "{{@Random | 3}}",
+         "url": "https://github.com/humera987/FXScript-Test-Functions",
+         "account": "{{@create_gitacc_abstract_Response.data.id}}"
        }'
 
 assertions:
