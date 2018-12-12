@@ -138,6 +138,17 @@ generators:
   matches: null
   authors: ""
   abacResources: null
+- type: "abacpositive"
+  assertions:
+  - "Create:@StatusCode == 200 OR @StatusCode == 201"
+  - "Allowed:@StatusCode == 200 OR @StatusCode == 201"
+  tags: null
+  severity: "Major"
+  database: null
+  inactive: true
+  matches: null
+  authors: ""
+  abacResources: null
 - type: "DDOS"
   assertions:
   - "@StatusCode != 401"
