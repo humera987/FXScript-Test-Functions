@@ -20,11 +20,12 @@ headers:
 
 testCases:
   - id: 1
-    body: '{
+    body: 
+      '{
         "name": "{{@Random | 3}}",
         "url": "https://github.com/humera987/FXScript-Test-Functions",
         "account": "{{@create_gitacc_abstract_Response.data.id}}"
-     }'
+       }'
 
 assertions:
   - "@StatusCode == 200"
