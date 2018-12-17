@@ -1,0 +1,46 @@
+name: create_project_Git1
+
+authors:
+  - Asiya Shaji
+  - Humera Sultana
+
+type: SUITE
+
+init:
+  - create_gitacc_abstract
+
+endpoint: /projects
+
+method: POST
+
+auth: Default
+
+headers:
+- 'Content-Type: application/json'
+
+testCases:
+  - id: 1
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "url": "https://github.com/humera987/FXScript-Test-Functions",
+        "account": "{{@create_gitacc_abstract_Response.data.id}}"
+       }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.url == @Request.url"
+  - "@Response.data.account.id == @Request.account.id"
+
+cleanup:
+  - delete_project
+  - delete_gitacc_abstract
+
+severity: Major
+
+category: Functional
+
+tags:
+- V2
