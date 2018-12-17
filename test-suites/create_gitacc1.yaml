@@ -19,7 +19,7 @@ testCases:
   - id: 1
     body:
       '{
-        "name": "{{@Random | g}}",
+        "name": "{{git-@Random | g}}",
         "accountType": "Git",
         "accessKey": "humera987",
         "secretKey": "humera1234"
