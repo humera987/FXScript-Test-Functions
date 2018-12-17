@@ -7,7 +7,7 @@ authors:
 type: SUITE
 
 init:
-  - create_gitacc_abstract
+  - create_gitacc1_abstract
 
 endpoint: /projects
 
@@ -24,7 +24,7 @@ testCases:
       '{
         "name": "{{@Random | 3}}",
         "url": "https://github.com/humera987/FXScript-Test-Functions",
-        "account": "{{@create_gitacc_abstract_Response.data.id}}"
+        "account": "{{@create_gitacc1_abstract_Response.data.id}}"
        }'
 
 assertions:
@@ -36,7 +36,7 @@ assertions:
 
 cleanup:
   - delete_project
-  - delete_gitacc_abstract
+  - delete_gitacc1_abstract
 
 severity: Major
 
