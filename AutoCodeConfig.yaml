@@ -135,7 +135,16 @@ generators:
   severity: "Major"
   database: null
   inactive: true
-  matches: null
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: "ORG_B_ADMIN,ORG_B_USER"
+    allowRoles: "ORG_A_USER"
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
 - type: "abacpositive"
@@ -146,7 +155,16 @@ generators:
   severity: "Major"
   database: null
   inactive: true
-  matches: null
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: "ORG_A_ADMIN,ORG_A_USER2"
+    allowRoles: "ORG_A_USER1"
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
 - type: "DDOS"
@@ -192,7 +210,38 @@ generators:
     name: "MySQL"
     version: "5.7"
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "User-Create"
+    queryParams: null
+    bodyProperties: "id,name"
+  authors: ""
+  abacResources: null
+- type: "no_sql_injection_timebound"
+  assertions:
+  - "@ResponseTime < 7000 OR @ResponseTime > 10000"
+  - "@StatusCode != 404"
+  tags: null
+  severity: "Major"
+  database:
+    name: "MongoDB"
+    version: "4.0"
+  inactive: true
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "User-Create"
+    queryParams: null
+    bodyProperties: "id,name"
   authors: ""
   abacResources: null
 - type: "log_Forging"
