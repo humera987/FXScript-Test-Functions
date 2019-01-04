@@ -16,7 +16,7 @@ method: POST
 auth: Default
 
 headers:
-- 'Content-Type: application/json'
+ - 'Content-Type: application/json'
 
 testCases:
   - id: 1
@@ -35,7 +35,7 @@ assertions:
   - "@Response.data.account.id == @Request.account.id"
 
 cleanup:
-  - delete_project
+  - delete_project_Git
   - delete_gitacc_abstract
 
 severity: Major
