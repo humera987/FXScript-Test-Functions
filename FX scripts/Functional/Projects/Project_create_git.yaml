@@ -24,7 +24,7 @@ testCases:
       '{
         "name": "{{@Random | 3}}",
         "url": "https://github.com/humera987/FXScript-Test-Functions",
-        "account": "{{@create_gitacc_abstract_Response.data.id}}"
+        "account": "{{@create_gitacc_abstract_Response.data}}"
        }'
 
 assertions:
