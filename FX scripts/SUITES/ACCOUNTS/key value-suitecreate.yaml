@@ -28,7 +28,7 @@ assertions:
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
   - "@Response.data.accountType == @Request.accountType"
-  - "@Response.data.value == EMPTY"
+  - "@Response.data.Value == EMPTY"
 
 cleanup:
   - delete_account
