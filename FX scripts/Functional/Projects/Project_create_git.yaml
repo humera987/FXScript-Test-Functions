@@ -6,9 +6,6 @@ authors:
 
 type: SUITE
 
-init:
-  - create_gitacc_abstract
-
 endpoint: /projects
 
 method: POST
@@ -23,8 +20,7 @@ testCases:
     body:
       '{
         "name": "{{@Random | 3}}",
-        "url": "https://13.56.210.25/v2/api-docs",
-        "account": "{{@create_gitacc_abstract_Response.data}}"
+        "url": "https://13.56.210.25/v2/api-docs"
        }'
 
 assertions:
@@ -32,11 +28,9 @@ assertions:
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
   - "@Response.data.url == @Request.url"
-  - "@Response.data.account.id == @Request.account.id"
 
 cleanup:
   - delete_project_Git
-  - delete_gitacc_abstract
 
 severity: Major
 
