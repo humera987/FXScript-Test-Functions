@@ -20,7 +20,7 @@ testCases:
       '{
         "name": "{{@Random | 3}}",
         "accountType": "KeyValue",
-        "Value": "{{@Random | 12}}"
+        "Value": "g-{{@Random | 12}}"
       }'
 
 assertions:
