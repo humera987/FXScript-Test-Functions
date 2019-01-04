@@ -1,11 +1,11 @@
-name: delete_fx_issueacc_abstract
+name: delete_fx_issuesacc_abstract
 
 authors:
   - Humera Sultana
 
 type: ABSTRACT
 
-endpoint: /accounts/{{@create_fx issueacc_abstract_Response.data.id}}
+endpoint: /accounts/{{@create_fx issuesacc_abstract_Response.data.id}}
 
 method: DELETE
 

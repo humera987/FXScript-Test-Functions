@@ -1,4 +1,4 @@
-name: create_fx_issueacc_abstract
+name: create_fx_issuesacc_abstract
 
 authors:
   - Humera Sultana
@@ -19,7 +19,7 @@ testCases:
     body:
       '{
         "name": "{{@Random | 3}}",
-        "accountType": "FX_Issue"
+        "accountType": "FX_Issues"
       }'
 
 assertions:
