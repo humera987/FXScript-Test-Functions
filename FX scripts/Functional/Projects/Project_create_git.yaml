@@ -23,7 +23,7 @@ testCases:
     body:
       '{
         "name": "{{@Random | 3}}",
-        "url": "https://github.com/humera987/FXScript-Test-Functions",
+        "url": "https://13.56.210.25/v2/api-docs",
         "account": "{{@create_gitacc_abstract_Response.data}}"
        }'
 
