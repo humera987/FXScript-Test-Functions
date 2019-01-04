@@ -19,7 +19,7 @@ testCases:
     body:
       '{
         "name": "{{@Random | 3}}",
-        "accountType": "FX_Issue"
+        "accountType": "FX_Issues"
       }'
 
 assertions:
