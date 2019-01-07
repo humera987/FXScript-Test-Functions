@@ -7,7 +7,7 @@ authors:
 type: SUITE
 
 init:
-  - create_githubacc_abstract
+  - create_gitacc_abstract
 
 endpoint: /projects
 
@@ -30,7 +30,7 @@ testCases:
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
-  - "@Response.data.name == @Request.name"
+  - "@Response.data.projects == @Request.projects"
   - "@Response.data.url == @Request.url"
   - "@Response.data.account.id == @Request.account.id"
 
