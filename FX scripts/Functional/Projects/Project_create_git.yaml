@@ -1,4 +1,4 @@
-name: create_project_Git
+name: create_project
 
 authors:
   - Asiya Shaji
@@ -20,17 +20,19 @@ testCases:
     body:
       '{
         "name": "{{@Random | 3}}",
-        "url": "https://13.56.210.25/v2/api-docs"
+        "OpenAPISpec":{
+            "url":"https://13.56.210.25/v2/api-docs"
+        }
        }'
 
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
-  - "@Response.data.url == @Request.url"
+  - "@Response.data.OpenAPISpec == @Request.OpenAPISpec"
 
 cleanup:
-  - delete_project_Git
+  - delete_project
 
 severity: Major
 
