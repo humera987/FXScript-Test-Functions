@@ -36,7 +36,7 @@ assertions:
 
 cleanup:
   - delete_project
-  - delete_account
+  - delete_gitacc_abstract
 
 severity: Major
 
