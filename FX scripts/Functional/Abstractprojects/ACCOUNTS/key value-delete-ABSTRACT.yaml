@@ -1,0 +1,26 @@
+name: delete_keyvalueacc_abstract
+
+authors:
+  - Humera Sultana
+
+type: ABSTRACT
+
+endpoint: /accounts/{{@create_keyvalueacc_abstract_Response.data.id}}
+
+method: DELETE
+
+auth: Default
+
+headers:
+  - 'Content-Type: application/json'
+
+assertions:
+    - "@StatusCode == 200"
+    - "@Response.errors == false"
+
+severity: Major
+
+category: Functional
+
+tags:
+- V2

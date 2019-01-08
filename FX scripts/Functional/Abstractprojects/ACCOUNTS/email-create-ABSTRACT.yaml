@@ -1,37 +1,41 @@
-name: create_project_abstract
+name: create_emailacc_abstract
 
 authors:
+  - Intesar Shannan Mohammed
   - Humera Sultana
 
 type: ABSTRACT
 
-endpoint: /projects
+endpoint: /accounts
 
 method: POST
 
 auth: Default
 
 headers:
- - 'Content-Type: application/json'
+  - 'Content-Type: application/json'
 
 testCases:
   - id: 1
     body:
       '{
         "name": "{{@Random | 3}}",
-        "openAPISpec": "https://13.56.210.25/v2/api-docs"
-       }'
+        "accountType": "Email",
+        "accessKey": "humera987"
+      }'
 
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
-  - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
-  - "@Response.data.openAPISpec == @Request.openAPISpec"
+  - "@Response.data.accountType == @Request.accountType"
 
 severity: Major
 
 category: Functional
 
 tags:
-- V2
+   - V2
+
+policies:
+  logger: DEBUG
