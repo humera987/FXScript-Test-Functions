@@ -1,4 +1,4 @@
-name: create_project_GitHub
+name: create_project_Git
 
 authors:
   - Humera Sultana
@@ -6,7 +6,7 @@ authors:
 type: SUITE
 
 init:
-  - create_githubacc_abstract
+  - create_gitacc_abstract
 
 endpoint: /projects
 
@@ -24,7 +24,7 @@ testCases:
         "orgid": "{{@Response.data.org.id}}",
         "projectid": "{{@create_project_abstract_Response.data.id}}",
         "url": "https://github.com/humera987/FXScript-Test-Functions",
-        "account": "{{@create_githubacc_abstract_Response.data.id}}"
+        "account": "{{@create_gitacc_abstract_Response.data.id}}"
        }'
 
 assertions:
