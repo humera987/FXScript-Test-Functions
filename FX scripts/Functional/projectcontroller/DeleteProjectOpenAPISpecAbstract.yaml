@@ -6,14 +6,14 @@ authors:
 
 type: ABSTRACT
 
-endpoint: /projects/{{@CreateProjectopenAPISpecAbstract_Response.data.id}}
+endpoint: /projects/{{@_Response.data.id}}
 
 method: DELETE
 
 auth: Default
 
 headers:
-- 'Content-Type: application/json'
+ - 'Content-Type: application/json'
 
 assertions:
     - "@StatusCode == 200"
