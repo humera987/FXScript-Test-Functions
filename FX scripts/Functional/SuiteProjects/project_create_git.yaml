@@ -9,7 +9,7 @@ init:
   - create_gitacc_abstract
   - create_project_abstract
 
-endpoint: /projects
+endpoint: /projects/{{@create_project_abstract_Response.data.id}}
 
 method: PUT
 
