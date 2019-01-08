@@ -18,15 +18,22 @@ testCases:
   - id: 1
     body:
       '{
-        "name": "{{@Random | 3}}",
-        "openAPISpec": "https://13.56.210.25/v2/api-docs"
+        "id": "{{@create_project_abstract_Response.data.id}}",
+        "org":{
+          "id":"{{@create_project_abstract_Response.data.org.id}}"
+          },
+        "name": "proj-{{@Random | 6}}",
+        "url": "https://github.com/humera987/FXScript-Test-Functions",
+        "account": "{{@create_gitacc_abstract_Response.data.id}}"
        }'
 
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
-  - "@Response.data.name == @Request.name"
-  - "@Response.data.openAPISpec == @Request.openAPISpec"
+  - "@Response.data.org == @Request.project.id"
+  - "@Response.data.project == @Request.project.id"
+  - "@Response.data.url == @Request.url"
+  - "@Response.data.account.id == @Request.account.id"
 
 severity: Major
 
