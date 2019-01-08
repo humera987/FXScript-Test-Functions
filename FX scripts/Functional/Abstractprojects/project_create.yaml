@@ -1,7 +1,6 @@
 name: create_project
 
 authors:
-  - Asiya Shaji
   - Humera Sultana
 
 type: ABSTRACT
@@ -20,16 +19,14 @@ testCases:
     body:
       '{
         "name": "{{@Random | 3}}",
-        "openAPISpec":{
-            "url":"https://13.56.210.25/v2/api-docs"
-        }
+        "openAPISpec": "https://13.56.210.25/v2/api-docs"
        }'
 
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
-  - "@Response.data.OpenAPISpec == @Request.OpenAPISpec"
+  - "@Response.data.openAPISpec == @Request.openAPISpec"
 
 severity: Major
 
