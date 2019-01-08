@@ -33,10 +33,6 @@ assertions:
   - "@Response.data.url == @Request.url"
   - "@Response.data.account.id == @Request.account.id"
 
-cleanup:
-  - delete_project
-  - delete_gitacc_abstract
-
 severity: Major
 
 category: Functional
