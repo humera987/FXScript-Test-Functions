@@ -20,7 +20,7 @@ testCases:
     body:
       '{
         "name": "{{@Random | 3}}",
-        "OpenAPISpec":{
+        "openAPISpec":{
             "url":"https://13.56.210.25/v2/api-docs"
         }
        }'
