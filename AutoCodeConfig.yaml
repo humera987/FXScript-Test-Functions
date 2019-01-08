@@ -5,8 +5,7 @@ generators:
 - type: "no_params"
   assertions:
   - "@StatusCode == 200"
-  tags:
-  - " OWASP - OTG-CONFIG-006"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -20,15 +19,22 @@ generators:
   severity: "Major"
   database: null
   inactive: true
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
   authors: ""
   abacResources: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode == 401 OR @StatusCode == 403"
-  tags:
-  - "OWASP - OTG-AUTHN-002"
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -47,15 +53,7 @@ generators:
 - type: "auth_invalid"
   assertions:
   - "@StatusCode == 401 OR @StatusCode == 403"
-  tags:
-  - "OWASP A2"
-  - "OWASP A5"
-  - "OWASP A6"
-  - "OWASP A7"
-  - "[PCI DSS 3.0] 6.5.8"
-  - "[PCI DSS 3.0] 6.5.10"
-  - "OTG-AUTHN-004"
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -74,15 +72,7 @@ generators:
 - type: "auth_invalid_empty"
   assertions:
   - "@StatusCode == 401 OR @StatusCode == 403"
-  tags:
-  - "OWASP A2"
-  - "OWASP A5"
-  - "OWASP A6"
-  - "OWASP A7"
-  - "[PCI DSS 3.0] 6.5.8"
-  - "[PCI DSS 3.0] 6.5.10"
-  - "OTG-AUTHN-004"
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -101,11 +91,7 @@ generators:
 - type: "auth_invalid_sql"
   assertions:
   - "@StatusCode == 401 OR @StatusCode == 403"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OTG-AUTHN-004"
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -125,9 +111,7 @@ generators:
   assertions:
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
   - "Allowed:@StatusCode != 401 AND @StatusCode != 403"
-  tags:
-  - "OWASP - OTG-IDENT-001 "
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -148,8 +132,7 @@ generators:
   - "Create:@StatusCode == 200 OR @StatusCode == 201"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
   - "#Disallowed:@StatusCode == 200 AND @Response.errors == true"
-  tags:
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -169,8 +152,7 @@ generators:
   assertions:
   - "Create:@StatusCode == 200 OR @StatusCode == 201"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
-  tags:
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -190,8 +172,7 @@ generators:
   assertions:
   - "Create:@StatusCode == 200 OR @StatusCode == 201"
   - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
-  tags:
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -211,8 +192,7 @@ generators:
   assertions:
   - "Create:@StatusCode == 200 OR @StatusCode == 201"
   - "Allowed:@StatusCode == 200 OR @StatusCode == 201"
-  tags:
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -233,9 +213,7 @@ generators:
   - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  tags:
-  - "[PCI DSS 3.0] 6.5.2"
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -257,12 +235,7 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  tags:
-  - "OWASP A3"
-  - "[PCI DSS 3.0] 6.5.7"
-  - "OWASP - OTG-INPVAL-001"
-  - "OWASP - OTG-INPVAL-002"
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -273,11 +246,7 @@ generators:
   assertions:
   - "@ResponseTime < 7000 OR @ResponseTime > 10000"
   - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database:
     name: "MySQL"
@@ -299,11 +268,7 @@ generators:
   assertions:
   - "@ResponseTime < 7000 OR @ResponseTime > 10000"
   - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database:
     name: "MySQL"
@@ -325,11 +290,7 @@ generators:
   assertions:
   - "@ResponseTime < 7000 OR @ResponseTime > 10000"
   - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX Top 10 - API Vulnerability"
+  tags: null
   severity: "Major"
   database:
     name: "MongoDB"
@@ -349,12 +310,11 @@ generators:
   abacResources: null
 - type: "log_Forging"
   assertions:
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
   - "@StatusCode != 200"
   - "@StatusCode != 401"
-  tags:
-  - "OWASP - Log Injection"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -365,8 +325,7 @@ generators:
   assertions:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  tags:
-  - "OWASP - OTG-BUSLOGIC-001"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -379,8 +338,7 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  tags:
-  - "OWASP - OTG-BUSLOGIC-001"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -393,8 +351,7 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  tags:
-  - "OWASP - OTG-BUSLOGIC-001"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
@@ -418,8 +375,7 @@ generators:
   assertions:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  tags:
-  - "OWASP - OTG-BUSLOGIC-001"
+  tags: null
   severity: "Major"
   database: null
   inactive: true
