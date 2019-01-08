@@ -34,10 +34,7 @@ testCases:
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
-  - "@Response.data.org == @Request.project.id"
-  - "@Response.data.project == @Request.project.id"
-  - "@Response.data.url == @Request.url"
-  - "@Response.data.account.id == @Request.account.id"
+  - "@Response.data != EMPTY"
 
 cleanup:
   - delete_project_abstract
