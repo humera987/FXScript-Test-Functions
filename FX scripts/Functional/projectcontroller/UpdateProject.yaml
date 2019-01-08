@@ -7,8 +7,8 @@ authors:
 type: SUITE
 
 init:
- - create_githubacc_abstract
- - CreateProjectopenAPISpecAbstract
+  - create_githubacc_abstract
+  - CreateProjectopenAPISpecAbstract
 
 endpoint: /projects
 
@@ -23,10 +23,11 @@ testCases:
   - id: 1
     body:
       '{
-        "id": "{{@CreateProjectopenAPISpecAbstract_Response.data.project.id}}",
+        "Id": "{{@Create_Project_openAPISpec_Abstract_Response.data.id}}",
         "org": {
-          "id": "{{@CreateProjectopenAPISpecAbstract_Response.data.org.id}}"
+            "Id": "{{@Create_Project_openAPISpec_Abstract_Response.data.org.id}}"
           },
+        "name": "{{@Random | 5}}"
         "url": "https://github.com/humera987/FXScript-Test-Functions.git",
         "account": "{{@create_githubacc_abstract_Response.data.id}}"
       }'
