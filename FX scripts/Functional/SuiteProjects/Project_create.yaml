@@ -26,7 +26,9 @@ assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
-  - "@Response.data.openAPISpec == @Request.openAPISpec"
+
+cleanup:
+    - delete_project_abstract
 
 severity: Major
 
