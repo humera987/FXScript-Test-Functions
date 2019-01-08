@@ -23,9 +23,9 @@ testCases:
   - id: 1
     body:
       '{
-        "Id": "{{@CreateProjectopenAPISpecAbstract_Response.data.id}}",
+        "id": "{{@CreateProjectopenAPISpecAbstract_Response.data.id}}",
         "org": {
-            "Id": "{{@CreateProjectopenAPISpecAbstract_Response.data.org.id}}"
+            "id": "{{@CreateProjectopenAPISpecAbstract_Response.data.org.id}}"
           },
         "name": "{{@Random | 5}}"
         "url": "https://github.com/humera987/FXScript-Test-Functions.git",
