@@ -10,7 +10,7 @@ init:
 
 endpoint: /projects
 
-method: POST
+method: PUT
 
 auth: Default
 
