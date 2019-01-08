@@ -10,7 +10,7 @@ init:
  - create_githubacc_abstract
  - CreateProjectopenAPISpecAbstract
 
-endpoint: /projects/{{@CreateProjectopenAPISpecAbstract}}
+endpoint: /projects
 
 method: PUT
 
@@ -26,8 +26,8 @@ testCases:
         "org": {
           "id": "{{@CreateProjectopenAPISpecAbstract_Response.data.org.id}}"
         },
-        "url": "http://github.com/humera987/FXScript-Test-Functions",
-        "account": "{{@CreateGitHubaccAbstract_Response.data}}"
+        "url": "https://github.com/humera987/FXScript-Test-Functions",
+        "account": "{{@create_githubacc_abstract_Response.data.id}}"
      }'
 
 assertions:
