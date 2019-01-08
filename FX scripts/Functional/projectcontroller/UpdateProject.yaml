@@ -26,7 +26,7 @@ testCases:
         "org": {
           "id": "{{@CreateProjectopenAPISpecAbstract_Response.data.org.id}}"
         },
-        "url": "https://github.com/humera987/FXScript-Test-Functions",
+        "url": "https://github.com/humera987/FXScript-Test-Functions.git",
         "account": "{{@create_githubacc_abstract_Response.data.id}}"
     }'
 
