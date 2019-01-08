@@ -1,6 +1,7 @@
-name: delete_project_abstract
+name: DeleteProject
 
 authors:
+  - Asiya Shaji
   - Humera Sultana
 
 type: ABSTRACT
@@ -12,7 +13,7 @@ method: DELETE
 auth: Default
 
 headers:
-  - 'Content-Type: application/json'
+- 'Content-Type: application/json'
 
 assertions:
     - "@StatusCode == 200"

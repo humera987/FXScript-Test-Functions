@@ -1,6 +1,7 @@
-name: create_project_abstract
+name: CreateProjectopenAPISpec
 
 authors:
+  - Asiya Shaji
   - Humera Sultana
 
 type: ABSTRACT
@@ -12,16 +13,14 @@ method: POST
 auth: Default
 
 headers:
- - 'Content-Type: application/json'
+- 'Content-Type: application/json'
 
 testCases:
-  - id: 1
-    body:
-      '{
-        "name": "{{@Random | 3}}",
-        "openAPISpec": "https://13.56.210.25/v2/api-docs"
-       }'
-
+    - id: 1
+      body: '{
+        "name": "{{@Random | 6}}",
+        "openAPISpec":"https://github.com/humera987/FXScript-Test-Functions"
+}'
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"

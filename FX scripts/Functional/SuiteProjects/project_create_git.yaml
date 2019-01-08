@@ -37,7 +37,7 @@ assertions:
   - "@Response.data != EMPTY"
 
 cleanup:
-  - delete_project_abstract
+  - delete_project
   - delete_gitacc_abstract
 
 severity: Major
