@@ -21,7 +21,7 @@ testCases:
   - id: 1
     body:
       '{
-        "projects": "{{@create_project_abstract_Response.data.id}}",
+        "project": "{{@create_project_abstract_Response.data.id}}",
         "url": "https://github.com/humera987/FXScript-Test-Functions",
         "account": "{{@create_gitacc_abstract_Response.data.id}}"
        }'
