@@ -1,0 +1,49 @@
+name: UpdateProject
+
+authors:
+  - Asiya Shaji
+  - Humera Sultana
+
+type: SUITE
+
+init:
+  - create_githubacc_abstract
+  - CreateProjectopenAPISpecAbstract
+
+endpoint: /projects
+
+method: PUT
+
+auth: Default
+
+headers:
+  - 'Content-Type: application/json'
+
+testCases:
+  - id: 1
+    body:
+      '{
+        "Id": "{{@CreateProjectopenAPISpecAbstract_Response.data.id}}",
+        "org": {
+            "Id": "{{@CreateProjectopenAPISpecAbstract_Response.data.org.id}}"
+          },
+        "name": "{{@Random | 5}}"
+        "url": "https://github.com/humera987/FXScript-Test-Functions.git",
+        "account": "{{@create_githubacc_abstract_Response.data}}"
+      }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data != EMPTY"
+
+cleanup:
+  - DeleteProjectopenAPISpecAbstract
+  - delete_githubacc_abstract
+
+severity: Major
+
+category: Functional
+
+tags:
+- V2
