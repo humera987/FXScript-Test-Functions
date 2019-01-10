@@ -349,10 +349,10 @@ generators:
   abacResources: null
 - type: "log_Forging"
   assertions:
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
   - "@StatusCode != 200"
   - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
   tags:
   - "OWASP - Log Injection"
   severity: "Major"
