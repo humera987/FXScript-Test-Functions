@@ -1,12 +1,11 @@
-name: creategitlabaccabstract
+name: CreateProjectGitLabAbstract
 
 authors:
-  - Intesar Shannan Mohammed
   - Humera Sultana
 
 type: ABSTRACT
 
-endpoint: /accounts
+endpoint: /projects
 
 method: POST
 
@@ -20,18 +19,16 @@ testCases:
     body:
       '{
         "name": "{{@Random | 3}}",
-        "accountType": "GitLab",
-        "accessKey": "humera987",
-        "secretKey": "humera1234"
+        "url": "https://github.com/humera987/FXScript-Test-Functions",
+        "account": "{{@creategitlabaccabstract_Response.data}}"
       }'
 
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
-  - "@Response.data.accountType == @Request.accountType"
-  - "@Response.data.accessKey == @Request.accessKey"
-  - "@Response.data.secretKey == EMPTY"
+  - "@Response.data.url == @Request.url"
+  - "@Response.data.account.id == @Request.account.id"
 
 severity: Major
 

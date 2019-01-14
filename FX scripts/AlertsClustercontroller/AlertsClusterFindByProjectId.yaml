@@ -1,0 +1,32 @@
+name: AlertsClusterFindByProjectId
+
+authors:
+  - Asiya Shaji
+  - Humera Sultana
+
+type: SUITE
+
+init:
+ - creategithubaccabstract
+ - create_project_GitHub_abstract
+
+endpoint: /alerts/ref/{{@create_project_GitHub_abstract_Response.data.id}}?page=0&pageSize=20
+
+method: GET
+
+auth: Default
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+cleanup:
+  - delete_project_GitHub_abstract
+  - deletegithubaccabstract
+
+severity: Major
+
+category: Functional
+
+tags:
+  - V2
