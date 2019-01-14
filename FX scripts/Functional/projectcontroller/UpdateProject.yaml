@@ -8,7 +8,7 @@ type: SUITE
 
 init:
   - creategithubaccabstract
-  - CreateProjectopenAPISpecAbstract
+  - CreateProjectOpenAPISpecAbstract
 
 endpoint: /projects
 
@@ -23,11 +23,10 @@ testCases:
   - id: 1
     body:
       '{
-        "Id": "{{@CreateProjectopenAPISpecAbstract_Response.data.id}}",
+        "Id": "{{@CreateProjectOpenAPISpecAbstract_Response.data.id}}",
         "org": {
-            "Id": "{{@CreateProjectopenAPISpecAbstract_Response.data.org.id}}"
+            "Id": "{{@CreateProjectOpenAPISpecAbstract_Response.data.org.id}}"
           },
-        "name": "{{@Random | 5}}"
         "url": "https://github.com/humera987/FXScript-Test-Functions.git",
         "account": "{{@creategithubaccabstract_Response.data.id}}"
       }'
@@ -38,7 +37,7 @@ assertions:
   - "@Response.data != EMPTY"
 
 cleanup:
-  - DeleteProjectopenAPISpecAbstract
+  - DeleteProjectOpenAPISpecAbstract
   - deletegithubaccabstract
 
 severity: Major
