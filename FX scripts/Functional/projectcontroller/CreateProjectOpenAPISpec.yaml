@@ -18,7 +18,7 @@ headers:
 testCases:
     - id: 1
       body: '{
-        "name": "{{@Random | 6}}",
+        "name": "proj-{{@Random | 6}}",
         "openAPISpec":"http://13.56.210.25/v2/api-docs"
 }'
 assertions:

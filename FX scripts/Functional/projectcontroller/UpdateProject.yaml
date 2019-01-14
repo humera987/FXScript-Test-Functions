@@ -29,7 +29,7 @@ testCases:
         },
         "name": "proj-{{@Random | 6}}",
         "url": "https://github.com/humera987/FXScript-Test-Functions.git",
-        "account": "{{@creategithubaccabstract_Response.data.id}}"
+        "account": "{{@creategithubaccabstract_Response.data}}"
       }'
 
 assertions:
