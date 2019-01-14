@@ -23,7 +23,7 @@ testCases:
   - id: 1
     body:
       '{
-        "Id": "{{@CreateProjectOpenAPISpecAbstract_Response.data.id}}",
+        "id": "{{@CreateProjectOpenAPISpecAbstract_Response.data.id}}",
         "url": "https://github.com/humera987/FXScript-Test-Functions.git",
         "account": "{{@creategithubaccabstract_Response.data.id}}"
       }'
