@@ -1,0 +1,26 @@
+name: deletefxissuesaccabstract
+
+authors:
+  - Humera Sultana
+
+type: ABSTRACT
+
+endpoint: /accounts/{{@createfxissuesaccabstract_Response.data.id}}
+
+method: DELETE
+
+auth: Default
+
+headers:
+  - 'Content-Type: application/json'
+
+assertions:
+    - "@StatusCode == 200"
+    - "@Response.errors == false"
+
+severity: Major
+
+category: Functional
+
+tags:
+- V2
