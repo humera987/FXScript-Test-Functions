@@ -1,0 +1,49 @@
+name: CreateEnvironment
+
+authors:
+  - Asiya Shaji
+  - Humera Sultana
+
+type: SUITE
+
+init:
+  - creategithubaccabstract
+  - CreateProjectOpenAPISpecAbstract
+
+endpoint: /envs
+
+method: POST
+
+auth: Default
+
+headers:
+ - 'Content-Type: application/json'
+
+testCases:
+    - id: 1
+      body: '{"auths":[{"authType": "Basic","name": "Default",
+      "password": "humera123$","username": "Humera//humera@fxlabs.io"}],
+      "name": "UAT12","baseUrl": "http://13.56.210.25/api/v1",
+      "projectId": "{{@CreateProjectOpenAPISpecAbstract_Response.data.id}}"}'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.authType == @Request.authType"
+  - "@Response.data.username == @Request.username"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.url == @Request.url"
+  - "@Response.data.projecct.id == @Request.project.id"
+
+cleanup:
+  - job_findby_projectid_abstract
+  - delete_job_findby_projectid_abstract
+  - DeleteProjectOpenAPISpecAbstract
+  - deletegithubaccabstract
+
+severity: Major
+
+category: Functional
+
+tags:
+- V2
