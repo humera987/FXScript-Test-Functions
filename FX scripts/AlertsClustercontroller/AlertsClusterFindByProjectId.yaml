@@ -21,7 +21,7 @@ assertions:
   - "@Response.errors == false"
 
 cleanup:
-  - DeleteProjectOpenAPISpecAbstract
+  - DeleteProject
   - deletegithubaccabstract
 
 severity: Major
