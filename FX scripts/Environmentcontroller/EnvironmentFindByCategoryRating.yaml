@@ -1,0 +1,37 @@
+name: EnvironmentFindByCategoryRating
+
+authors:
+  - Asiya Shaji
+  - Humera Sultana
+
+type: SUITE
+
+init:
+   - creategithubaccabstract
+   - CreateProjectOpenAPISpecAbstract
+   - CreateEnvironmentAbstract
+   - job_findby_projectid_abstract
+
+endpoint: /envs/{{@CreateEnvironmentAbstract_Response.data.id}}/envcategoryrating
+
+method: GET
+
+auth: Default
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data != EMPTY"
+
+cleanup:
+    - delete_job_findby_projectid_abstract
+    - DeleteEnvironmentAbstract
+    - DeleteProject
+    - deletegithubaccabstract
+
+severity: Major
+
+category: Functional
+
+tags:
+    - V2

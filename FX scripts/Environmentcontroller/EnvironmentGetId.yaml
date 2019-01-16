@@ -1,0 +1,29 @@
+name: EnvironmentGetId
+
+authors:
+  - Humera Sultana
+
+type: SUITE
+
+init:
+  - CreateEnvironmentAbstract
+
+endpoint: /env{{@CreateEnvironmentAbstract_Response.data.id}}?page=0&pageSize=20
+
+method: GET
+
+auth: Default
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+cleanup:
+   - DeleteEnvironmentAbstract
+
+severity: Major
+
+category: Functional
+
+tags:
+  - V2
