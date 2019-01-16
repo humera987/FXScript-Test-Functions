@@ -8,9 +8,9 @@ type: SUITE
 
 init:
  - creategithubaccabstract
- - create_project_GitHub_abstract
+ - CreateProjectOpenAPISpecAbstract
 
-endpoint: /alerts/ref/{{@create_project_GitHub_abstract_Response.data.id}}?page=0&pageSize=20
+endpoint: /alerts/ref/{{@CreateProjectOpenAPISpecAbstract_Response.data.id}}?page=0&pageSize=20
 
 method: GET
 
@@ -21,7 +21,7 @@ assertions:
   - "@Response.errors == false"
 
 cleanup:
-  - delete_project_GitHub_abstract
+  - DeleteProjectOpenAPISpecAbstract
   - deletegithubaccabstract
 
 severity: Major
