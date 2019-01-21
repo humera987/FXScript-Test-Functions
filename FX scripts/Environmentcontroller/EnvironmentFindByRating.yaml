@@ -7,10 +7,7 @@ authors:
 type: SUITE
 
 init:
-   - creategithubaccabstract
-   - CreateProjectOpenAPISpecAbstract
    - CreateEnvironmentAbstract
-   - job_findby_projectid_abstract
 
 endpoint: /envs/{{@CreateEnvironmentAbstract_Response.data.id}}/envrating
 
@@ -24,10 +21,7 @@ assertions:
   - "@Response.data != EMPTY"
 
 cleanup:
-    - delete_job_findby_projectid_abstract
     - DeleteEnvironmentAbstract
-    - DeleteProject
-    - deletegithubaccabstract
 
 severity: Major
 
