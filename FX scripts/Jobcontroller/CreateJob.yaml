@@ -1,0 +1,47 @@
+name: job_create
+
+authors:
+  - Asiya Shaji
+
+type: SUITE
+
+init:
+  - CreateProjectOpenAPISpecAbstract
+  - CreateEnvironmentAbstract
+  - job_findby_projectid_abstract
+
+endpoint: /jobs
+
+method: POST
+
+auth: Default
+
+testCases:
+  - id: 1
+    body: '{
+        "name": "job1",
+        "project": "{{@create_project_GitHub_abstract_Response.data}}",
+        "environment": "{{@create_environment_abstract_Response.data}}",
+        "regions": "US_WEST_2",
+        "categories": ""
+ }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.environment.id == @Request.environment.id"
+  - "@Response.data.project.id == @Request.project.id"
+
+cleanup:
+ - DeleteJobAbstract
+ - delete_job_findby_projectid_abstract
+ - DeleteEnvironmentAbstract
+ - DeleteProjectOpenAPISpecAbstract
+
+severity: Major
+
+category: Functional
+
+tags:
+    - V2
