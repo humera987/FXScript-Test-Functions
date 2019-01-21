@@ -38,7 +38,7 @@ assertions:
   - "@Response.data != EMPTY"
 
 cleanup:
-  - DeleteProject
+  - DeleteProjectOpenAPISpecAbstract
   - deletegithubaccabstract
 
 severity: Major

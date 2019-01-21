@@ -7,7 +7,6 @@ authors:
 type: SUITE
 
 init:
-  - creategithubaccabstract
   - CreateProjectOpenAPISpecAbstract
 
 endpoint: /envs
@@ -21,10 +20,13 @@ headers:
 
 testCases:
     - id: 1
-      body: '{"auths":[{"authType": "Basic","name": "Default",
+      body:
+      '{
+      "project": "{{@CreateProjectOpenAPISpecAbstract_Response.data}}",
+      "auths":[{"authType": "Basic","name": "Default",
       "password": "humera123$","username": "Humera//humera@fxlabs.io"}],
-      "name": "UAT12","baseUrl": "http://13.56.210.25/api/v1",
-      "projectId": "{{@CreateProjectOpenAPISpecAbstract_Response.data.id}}"}'
+      "name": "UAT12","baseUrl": "http://13.56.210.25/api/v1"
+      }'
 
 assertions:
   - "@StatusCode == 200"
@@ -38,8 +40,7 @@ assertions:
 cleanup:
   - job_findby_projectid_abstract
   - delete_job_findby_projectid_abstract
-  - DeleteProject
-  - deletegithubaccabstract
+  - DeleteProjectOpenAPISpecAbstract
 
 severity: Major
 

@@ -17,10 +17,13 @@ headers:
 
 testCases:
     - id: 1
-      body: '{"auths":[{"authType": "Basic","name": "Default",
-      "password": "humera123$","username": "Humera//humera@fxlabs.io"}],
-      "name": "UAT","baseUrl": "http://13.56.210.25/api/v1",
-      "projectId": "{{@create_project_GitHub_abstract_Response.data.id}}"}'
+      body:
+      '{
+       "projectId": "{{@create_project_GitHub_abstract_Response.data.id}}"
+       "auths":[{"authType": "Basic","name": "Default",
+       "password": "humera123$","username": "Humera//humera@fxlabs.io"}],
+       "name": "UAT","baseUrl": "http://13.56.210.25/api/v1"
+       }'
 
 assertions:
   - "@StatusCode == 200"
