@@ -34,10 +34,10 @@ assertions:
   - "@Response.data.project.id == @Request.project.id"
 
 cleanup:
- - DeleteJobAbstract
- - delete_job_findby_projectid_abstract
- - DeleteEnvironmentAbstract
- - DeleteProjectOpenAPISpecAbstract
+   - delete_job_findby_projectid_abstract
+   - DeleteProjectOpenAPISpecAbstract
+   - DeleteEnvironmentAbstract
+   - DeleteJobAbstract
 
 severity: Major
 
