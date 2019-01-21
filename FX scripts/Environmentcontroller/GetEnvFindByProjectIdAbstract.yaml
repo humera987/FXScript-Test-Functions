@@ -1,15 +1,15 @@
-name: EnvironmentFindByProjectId
+name: GetEnvFindByProjectIdAbstract
 
 authors:
   - Asiya Shaji
-  - Humera Sultana
+  -Humera Sultana
 
-type: SUITE
+type: ABSTRACT
 
 init:
    - CreateProjectOpenAPISpecAbstract
 
-endpoint:  /envs/project-id/{{@CreateProjectOpenAPISpecAbstract_Response.data.id}}
+endpoint: /envs/project-id/{{@CreateProjectOpenAPISpecAbstract_Response.data.id}}
 
 method: GET
 
@@ -20,12 +20,12 @@ assertions:
   - "@Response.errors == false"
   - "@Response.data != EMPTY"
 
-cleanup:
-  - DeleteProjectOpenAPISpecAbstract
-
 severity: Major
 
 category: Functional
 
 tags:
     - V2
+
+policies:
+    logger: DEBUG

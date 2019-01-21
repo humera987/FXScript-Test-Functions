@@ -2,7 +2,7 @@ name: UpdateEnvironment
 
 authors:
   - Asiya Shaji
-  -Humera Sultana
+  - Humera Sultana
 
 type: SUITE
 
@@ -25,10 +25,10 @@ testCases:
         "org": {
           "id": "{{@CreateProjectOpenAPISpecAbstract.data.org.id}}"
         },
-      "auths":[{"authType": "Basic","name": "Default",
-      "password": "humera123$","username": "Humera//humera@fxlabs.io"}],
-      "name": "ENV","baseUrl": "http://13.56.210.25/api/v1",
-      "projectId": "{{@CreateProjectOpenAPISpecAbstract.data.id}}"
+        "auths":[{"authType": "Basic","name": "Default",
+        "password": "humera123$","username": "Humera//humera@fxlabs.io"}],
+        "name": "ENV","baseUrl": "http://13.56.210.25/api/v1",
+        "projectId": "{{@CreateProjectOpenAPISpecAbstract.data.id}}"
       }'
 
 assertions:
@@ -43,7 +43,7 @@ assertions:
 cleanup:
   - job_findby_projectid_abstract
   - delete_job_findby_projectid_abstract
-  - DeleteProject
+  - DeleteProjectOpenAPISpecAbstract
   - deletegithubaccabstract
 
 severity: Major

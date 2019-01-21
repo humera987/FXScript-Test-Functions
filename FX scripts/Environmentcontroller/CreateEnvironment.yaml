@@ -38,7 +38,7 @@ assertions:
 cleanup:
   - job_findby_projectid_abstract
   - delete_job_findby_projectid_abstract
-  - DeleteProject
+  - DeleteProjectOpenAPISpecAbstract
   - deletegithubaccabstract
 
 severity: Major
