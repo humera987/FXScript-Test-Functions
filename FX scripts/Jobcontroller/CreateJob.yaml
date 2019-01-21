@@ -37,7 +37,7 @@ cleanup:
  - DeleteJobAbstract
  - delete_job_findby_projectid_abstract
  - DeleteEnvironmentAbstract
- - DeleteProjectOpenAPISpecAbstract
+ - DeleteProject
 
 severity: Major
 
