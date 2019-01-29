@@ -1,0 +1,23 @@
+name: JobFindProjectIdbyId
+
+authors:
+  - Humera Sultana
+
+type: SUITE
+
+endpoints: /jobs/{{@CreateProjectOpenAPISpecAbstract_Response.data}}/{{@CreateJobAbstract_Response.data.id}}
+
+method: GET
+
+auth: Default
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+severity: Major
+
+category: Functional
+
+tags:
+  - V2
