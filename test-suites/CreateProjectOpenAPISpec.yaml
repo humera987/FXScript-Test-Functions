@@ -25,6 +25,9 @@ assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
+  
+cleanup:
+ - DeleteProject
 
 severity: Major
 
