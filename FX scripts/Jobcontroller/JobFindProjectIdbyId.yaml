@@ -5,7 +5,7 @@ authors:
 
 type: SUITE
 
-endpoints: /jobs/{{@CreateProjectOpenAPISpecAbstract_Response.data}}/{{@CreateJobAbstract_Response.data.id}}
+endpoints: /jobs/{@CreateProjectOpenAPISpecAbstract_Response.data}/{{@CreateJobAbstract_Response.data.id}}
 
 method: GET
 
